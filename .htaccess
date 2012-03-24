@@ -1,0 +1,10 @@
+FileETag MTime Size
+<filesmatch ".(jpg|gif|png|css|js)$">
+ ExpiresActive on
+ ExpiresDefault "access plus 1 year"
+
+ Header set Cache-Control "max-age=604800, public"
+</filesmatch>
+
+RewriteEngine on
+RewriteRule avatar/(.*)/(.*)/$ /php/identicon.php?size=$1&hash=$2
